@@ -1,10 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import axios from 'axios'
 
 function App() {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    // const path = 'http://150.109.94.230:3000/api/v1/event_dates'
+    const path = 'https://api.bitecroissant.asia/api/v1/event_dates'
+    axios.get(path)
+    .then((response) => {
+      console.log(response)
+    })
+  }, [])
 
   return (
     <>
