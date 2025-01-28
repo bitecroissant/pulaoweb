@@ -12,6 +12,7 @@ function App() {
     axios.get(path)
     .then((response) => {
       console.log(response)
+      window.alert(JSON.stringify(response))
     })
   }, [])
 
